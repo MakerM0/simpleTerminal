@@ -20,7 +20,7 @@
 # Here is an example from the python editor (pye_mp.py) that was updated
 # to use simpleTerminal to manage the main text and the status line.
 #
-# self.g=displayio.Group(max_size=2, scale=1) # create a group
+# self.g=displayio.Group(  scale=1) # create a group
 # Editor.display.show(self.g) # add the group to the display
 # self.g.append(self.mainTerminal.displayGroup) # add the first terminal's displayGroup to my main group
 # self.g.append(self.statusTerminal.displayGroup) # add the second terminal's displayGroup to my main group
@@ -146,7 +146,7 @@ class simpleTerminal:
             tile_height=self.fontH,
         )
 
-        self.displayGroup = displayio.Group(max_size=2, scale=1, x=0, y=0)
+        self.displayGroup = displayio.Group(  scale=1, x=0, y=0)
         self.displayGroup.append(self.tilegrid)  ### temporarily commented for debug!!!!!  ****
         if self.cursorDisplay:
             self.cursorOn()  # if the cursor is to be displayed, then add it to the group.
@@ -371,7 +371,7 @@ class editorTerminal:
                                            cursorWhileScrolling=False)
 
 
-        self.displayGroup=displayio.Group(max_size=2, scale=1) # this holds the display terminals for displayio
+        self.displayGroup=displayio.Group(  scale=1) # this holds the display terminals for displayio
         self.displayGroup.append(self.mainTerminal.displayGroup)
         self.displayGroup.append(self.statusTerminal.displayGroup)
 
